@@ -64,7 +64,6 @@ function hoverRainbow() {
         cell.style.background = `${color}`;
         cell.style.border = `${color} solid 1px`;
     }))
-
 }
 
 function getRandomColor() {
@@ -75,14 +74,21 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random()*16)];
     }
     return color;
-    console.log(color);
 }
 
+function hoverOpacity() {
+    let cells = document.querySelectorAll(".gridSquare");
+    let initialColor = "#000000";
 
-// function hoverRainbowColor(e) {
-//     let randomColor = getRandomColor();
-//     e.target.style.backgroundColor = randomColor;
-// }
+    cells.forEach(cell => cell.addEventListener("mouseover", () => { 
+        cell.style.backgroundColor = initialColor;
+        
+        if (cell.style.opacity <= 0.9) {
+            cell.style.opacity =+ cell.style.opacity + 0.1;
+            cell.style.border = `1px solid rgba(0, 0, 0, ${cell.style.opacity})`;
+        }
+    }))
+}
 
 createGrid(gridSize);
-hoverRainbow();
+hoverOpacity();
