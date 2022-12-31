@@ -19,18 +19,20 @@ function createGrid(gridSize) {
     }
 }
 
-document.querySelector('#gridBtn').addEventListener('click', inputGridSize);
-
-function inputGridSize() {
-    let gridSize = prompt("Enter a grid size (max 100)", "");
-    gridSize = parseInt(`${gridSize}`);
-    while (!(Number.isInteger(gridSize)) || (gridSize < 1) || (gridSize > 100)) {
-        gridSize = prompt("Please enter an integer between 1-100");
-        gridSize = parseInt(`${gridSize}`);
-    }
-
-    return parseInt(`${gridSize}`);
-    console.log(`${gridSize}`);
+function updateGridSize() {
+    removeGrid();
+    
+    let gridSize = document.getElementById("gridUserInput").value;
+    gridSize = parseInt(gridSize);
+    createGrid(gridSize);
 }
+
+function removeGrid() {
+    let container = document.querySelector(".sketch-container");
+    while (container.firstChild) {
+        container.firstChild.remove();
+    }
+}
+
 
 createGrid(gridSize);

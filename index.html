@@ -16,7 +16,12 @@
     <div class="sketch-section">
         <div class="container">
             <div class="sketch-section-container">
-                <button id="gridBtn">Change Grid Size</div>
+                <div id="promptText">Change grid size:</div>
+                <div class=grid-change>
+                    <div id="range-value">3</div>
+                    <input type="range" id="gridUserInput" min="3" max="100" value="16" step="1" onmouseup="updateGridSize()" onmousend="updateGridSize()">
+                    <div id="range-value">100</div>
+                </div>
                 <div class="sketch-container"></div>
             </div>
         </div>
