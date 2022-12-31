@@ -19,37 +19,6 @@ body {
     align-items: center;
 } 
 
-.grid-change {
-    margin: 10px;
-    display: flex;
-    align-items: center;
-}
-
-#range-value {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-input {
-    width: 200px;
-    padding: 0px 5px;
-    border-radius: 4px;
-}
-
-#gridBtn {
-    background-color: #373737;
-    border: 2px solid #232323;
-    color: #fff;
-    font-size: 15px;
-    margin-left: 10px;
-    border-radius: 4px;
-}
-
-#gridBtn:hover {
-    background-color: #464646;
-    cursor: pointer;
-}
-
 .sketch-container {
     border: black solid 1px;
     width: 500px;
@@ -74,8 +43,25 @@ input {
     padding: 20px;
 }
 
-
 /* slider */
+
+.grid-change {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#range-value {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input {
+    width: 200px;
+    padding: 0px 5px;
+    border-radius: 4px;
+}
+
 input[type=range] {
     height: 25px;
     -webkit-appearance: none;

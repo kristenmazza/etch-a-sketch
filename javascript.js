@@ -25,6 +25,7 @@ function updateGridSize() {
     let gridSize = document.getElementById("gridUserInput").value;
     gridSize = parseInt(gridSize);
     createGrid(gridSize);
+    hoverColor();
 }
 
 function removeGrid() {
@@ -34,5 +35,15 @@ function removeGrid() {
     }
 }
 
+function hoverColor() {
+    let cells = document.querySelectorAll(".gridSquare");
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", () => {
+            cell.style.backgroundColor = "black";
+            cell.style.border = "black solid 1px";
+        })
+    })
+}
 
 createGrid(gridSize);
+hoverColor();
