@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.title {
+    text-align: center;
+}
+
+.sketch-section {
+    flex: 1 0 auto;
+}
+
+#gridBtn {
+    margin: 20px;
+}
+
+.sketch-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.sketch-container {
+    border: black solid 1px;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; 
+}
+
+.row {
+    display: flex;
+}
+
+.gridSquare {
+    border: #666666 solid 1px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 20px;
+}
