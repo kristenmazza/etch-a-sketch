@@ -27,6 +27,9 @@ function updateGridSize() {
     gridSize = parseInt(gridSize);
     createGrid(gridSize);
 
+    if (pen === "eraser") {
+        pen = "black";
+    }
     hoverColor();
 }
 
@@ -58,6 +61,11 @@ function clearGrid() {
         cell.style.backgroundColor = "";
         cell.style.opacity = "";
     })
+
+    if (pen === "eraser") {
+        pen = "black";
+        return pen;
+    }
 }
 
 const rainbowBtn = document.querySelector("#rainbow-btn");
