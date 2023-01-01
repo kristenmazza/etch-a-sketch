@@ -16,13 +16,39 @@
     <div class="sketch-section">
         <div class="container">
             <div class="sketch-section-container">
-                <div id="promptText">Change grid size:</div>
-                <div class=grid-change>
-                    <div id="range-value">3</div>
-                    <input type="range" id="gridUserInput" min="3" max="100" value="16" step="1" onmouseup="updateGridSize()" onmousend="updateGridSize()">
-                    <div id="range-value">100</div>
+                <div class="controls">
+                    <div class="control-selections">
+                        <button id="clear-btn">Clear</button>
+                        <button id="black-btn">Black</button>
+                        <button id="grayscale-btn">Grayscale</button>
+                        <button id="rainbow-btn">Rainbow</button>
+                        <!-- <div id="grayscale">
+                            <div class="text">Grayscale</div>
+                            <label class="switch">
+                                <input type="checkbox" id="grayscaleCheckbox" class="toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div id="rainbow">
+                            <div class="text">Rainbow</div>
+                            <label class="switch">
+                                <input type="checkbox" id="rainboxCheckbox" class="toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div> -->
+                    </div>
+                    <div id="grid-slider-control">
+                        <div id="promptText">Change grid size:</div>
+                        <div class=grid-slider>
+                            <div id="range-value">3</div>
+                            <input type="range" id="gridUserInput" min="3" max="100" value="16" step="1" onmouseup="updateGridSize()" onmousend="updateGridSize()">
+                            <div id="range-value">100</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="sketch-container"></div>
+                <div class=outer-sketch-container>
+                    <div class="sketch-container"></div>
+                </div>
             </div>
         </div>
     </div>

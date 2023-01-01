@@ -1,4 +1,5 @@
 let gridSize = 16;
+let pen = "black";
 
 const sketchContainer = document.querySelector('.sketch-container');
 
@@ -25,6 +26,7 @@ function updateGridSize() {
     let gridSize = document.getElementById("gridUserInput").value;
     gridSize = parseInt(gridSize);
     createGrid(gridSize);
+
     hoverColor();
 }
 
@@ -33,37 +35,6 @@ function removeGrid() {
     while (container.firstChild) {
         container.firstChild.remove();
     }
-}
-
-function hoverColor() {
-    let cells = document.querySelectorAll(".gridSquare");
-
-    cells.forEach(cell => {
-        cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "black";
-            cell.style.border = "black solid 1px";
-        })
-    })
-}
-
-function hoverRandomColor(gridSize) {
-    cells = document.querySelectorAll(".gridSquare");
-    rows = document.querySelectorAll(".row");
-
-    for (let j = 0; j < gridSize; j++) {
-        randomColor = getRandomColor();
-        let parent = cells.
-        rows[j].cells[j].style.backgroundColor = `${randomColor}`;
-    }
-}
-
-function hoverRainbow() {
-    let cells = document.querySelectorAll(".gridSquare");
-    cells.forEach(cell => cell.addEventListener("mouseover", (e) => { 
-        let color = getRandomColor();
-        cell.style.background = `${color}`;
-        cell.style.border = `${color} solid 1px`;
-    }))
 }
 
 function getRandomColor() {
@@ -76,19 +47,57 @@ function getRandomColor() {
     return color;
 }
 
-function hoverOpacity() {
-    let cells = document.querySelectorAll(".gridSquare");
-    let initialColor = "#000000";
+const clearBtn = document.querySelector("#clear-btn");
+clearBtn.addEventListener('click', (e) => {
+    clearGrid();
+})
 
-    cells.forEach(cell => cell.addEventListener("mouseover", () => { 
-        cell.style.backgroundColor = initialColor;
-        
-        if (cell.style.opacity <= 0.9) {
-            cell.style.opacity =+ cell.style.opacity + 0.1;
-            cell.style.border = `1px solid rgba(0, 0, 0, ${cell.style.opacity})`;
-        }
-    }))
+function clearGrid() {
+    let cells = document.querySelectorAll(".gridSquare");
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "";
+        cell.style.opacity = "";
+    })
+}
+
+const rainbowBtn = document.querySelector("#rainbow-btn");
+rainbowBtn.addEventListener('click', (e) => {
+    pen = "rainbow";
+})
+
+const grayscaleBtn = document.querySelector("#grayscale-btn");
+grayscaleBtn.addEventListener('click', (e) => {
+    pen = "grayscale";
+})
+
+const blackBtn = document.querySelector("#black-btn");
+blackBtn.addEventListener('click', (e) => {
+    pen = "black";
+})
+
+function hoverColor() {
+    let cells = document.querySelectorAll('.gridSquare');
+    cells.forEach(cell => {
+        cell.addEventListener("mouseover", function(e) {
+            if (pen === "black") {
+                cell.style.backgroundColor = "black";
+                cell.style.opacity = 1;
+            } else if (pen === "rainbow") {
+                let color = getRandomColor();
+                cell.style.background = `${color}`;
+                cell.style.opacity = 2;
+            } else if (pen === "grayscale") {
+                if (cell.style.backgroundColor === "black" || cell.style.opacity === 2) {
+                    cell.style.opacity = "";
+                }
+                cell.style.backgroundColor = "#141414";
+                if (cell.style.opacity <= 0.9) {
+                    cell.style.opacity = +cell.style.opacity + 0.1;
+                } 
+            }
+        });
+    });
 }
 
 createGrid(gridSize);
-hoverOpacity();
+hoverColor();
