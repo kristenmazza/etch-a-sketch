@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color:#a7b6c8;
-    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
@@ -16,6 +16,7 @@ body {
 
 .title {
     text-align: center;
+    color:#33383e; 
 }
 
 .sketch-section {
@@ -51,11 +52,19 @@ button {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
     font-family : inherit;
     font-size: 15px;
-
+    cursor: pointer;
+    color: #33383e;
 }
 
 button:hover {
     background-color: #c0cfe2; 
+}
+
+.control-selections {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-direction: column;
 }
 
 .sketch-container {
@@ -81,17 +90,19 @@ button:hover {
     justify-content: center;
     flex-shrink: 0;
     padding: 20px;
-}
-
-.control-selections {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    flex-direction: column;
+    color: #33383e;
 }
 
 
 /* slider */
+
+#range-value, #prompt-text {
+    color: #33383e;
+}
+
+#prompt-text {
+    font-size: 18px;
+}
 
 .grid-slider {
     display: flex;
