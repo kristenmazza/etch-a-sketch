@@ -75,25 +75,33 @@ blackBtn.addEventListener('click', (e) => {
     pen = "black";
 })
 
+const eraserBtn = document.querySelector("#eraser-btn");
+eraserBtn.addEventListener('click', (e) => {
+    pen = "eraser";
+})
+
 function hoverColor() {
     let cells = document.querySelectorAll('.gridSquare');
     cells.forEach(cell => {
         cell.addEventListener("mouseover", function(e) {
             if (pen === "black") {
                 cell.style.backgroundColor = "black";
-                cell.style.opacity = 1;
+                cell.style.opacity = 2;
             } else if (pen === "rainbow") {
                 let color = getRandomColor();
                 cell.style.background = `${color}`;
                 cell.style.opacity = 2;
             } else if (pen === "grayscale") {
-                if (cell.style.backgroundColor === "black" || cell.style.opacity === "2") {
+                if (cell.style.opacity === "2") {
                     cell.style.opacity = "";
                 }
                 cell.style.backgroundColor = "#141414";
                 if (cell.style.opacity <= 0.9) {
                     cell.style.opacity = +cell.style.opacity + 0.1;
                 } 
+            } else if (pen === "eraser") {
+                cell.style.backgroundColor = "";
+                cell.style.opacity = "";
             }
         });
     });
