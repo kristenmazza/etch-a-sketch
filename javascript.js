@@ -87,7 +87,7 @@ function hoverColor() {
                 cell.style.background = `${color}`;
                 cell.style.opacity = 2;
             } else if (pen === "grayscale") {
-                if (cell.style.backgroundColor === "black" || cell.style.opacity === 2) {
+                if (cell.style.backgroundColor === "black" || cell.style.opacity === "2") {
                     cell.style.opacity = "";
                 }
                 cell.style.backgroundColor = "#141414";
