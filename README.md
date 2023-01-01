@@ -15,5 +15,5 @@ This is a browser version of the classic childhood toy. It was created using HTM
 
 ## Project Outcomes
 * Improved knowledge of DOM manipulation
-* Created grid using flexbox
+* Created layout using flexbox
 * Used Git and GitHub for project management
