@@ -1,6 +1,8 @@
-# Etch-A-Sketch 
+# Etch-A-Sketch
 
-This is a browser version of the classic childhood toy. It was created using HTML, CSS, and JavaScript. 
+This is a browser version of the classic childhood toy. It was created using HTML, CSS, and JavaScript.
+
+![Etch-a-Sketch Demo](./etch-a-sketch-demo.gif)
 
 [Live Demo](https://kristenmazza.github.io/etch-a-sketch/) :point_left:
 
